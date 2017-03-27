@@ -5,6 +5,8 @@ import {Form, Fields, Field, Group} from '../component/Form';
 import {DropDown} from '../component/DropDown';
 import {CheckBox} from '../component/CheckBox';
 import {Radio} from '../component/Radio';
+import {RadioGroup} from '../component/RadioGroup';
+import {CheckBoxGroup} from '../component/CheckBoxGroup';
 import {DatePicker} from '../component/DatePicker';
 import {TimePicker} from '../component/TimePicker';
 import {TimeInput} from '../component/TimeInput';
@@ -12,6 +14,18 @@ import {DateTimePicker} from '../component/DateTimePicker';
 import {Item} from '../component/Item';
 import {CodeView} from '../component/CodeView';
 import {PROVINCES, CITIES} from '../constant';
+
+const options = [
+    {name: 'apple', value: 'apple'},
+    {name: 'banana', value: 'banana'},
+    {name: 'cat', value: 'cat', disabled: true},
+    {name: 'dog', value: 'dog'},
+    {name: 'egg', value: 'egg'},
+    {name: 'frog', value: 'frog'},
+    {name: 'god', value: 'god'},
+    {name: 'henrry', value: 'henrry'},
+    {name: 'ice', value: 'ice'},
+];
 
 const FormDemo = React.createClass({
     getInitialState() {
@@ -58,6 +72,11 @@ const FormDemo = React.createClass({
                         </Field>
                     </Fields>
                 </Group>
+                <Group label="radio group:">
+                    <Field>
+                        <RadioGroup options={options}></RadioGroup>
+                    </Field>
+                </Group>
                 <Group label="inline field:">
                     <Field type="inline">
                         <label className={CN('checkbox')}>
@@ -88,6 +107,11 @@ const FormDemo = React.createClass({
                             </div>
                         </Field>
                     </Fields>
+                </Group>
+                <Group label="group:">
+                    <Field>
+                        <CheckBoxGroup options={options}></CheckBoxGroup>
+                    </Field>
                 </Group>
                 <Group label="fields-3:">
                     <Fields size={3}>
